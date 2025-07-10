@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import House
 
-# Register your models here.
+@admin.register(House) # decorator to register the model with the admin site
+class HouseAdmin(admin.ModelAdmin):
+    pass # inherits everything from the ModelAdmin class
