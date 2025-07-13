@@ -12,6 +12,8 @@ class House(models.Model):
     bedrooms = models.PositiveIntegerField()
     bathrooms = models.PositiveIntegerField()
 
+    owner = models.ForeignKey("users.User", on_delete=models.CASCADE)
+
 # __str__ method is used to return a string representation of the object
 def __str__(self):
     return self.name

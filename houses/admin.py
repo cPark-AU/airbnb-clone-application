@@ -4,12 +4,13 @@ from .models import House
 @admin.register(House) # decorator to register the model with the admin site
 class HouseAdmin(admin.ModelAdmin):
 
-    fields = ["name", "price_per_night", "address", "pets_allowed"] 
+    fields = ["name", "price_per_night", "address", "pets_allowed", "owner",
+        "description"] 
     list_display = [
         "name",
         "price_per_night",
         "address",
-        "pets_allowed"
+        "pets_allowed", 
     ]
     list_filter = ["price_per_night", "pets_allowed"] # adds a filter to the admin site
     search_fields = ["name", "address"] # adds a search bar to the admin site
