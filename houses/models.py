@@ -5,10 +5,10 @@ class House(models.Model):
 
     """Model Definition for House"""
     name = models.CharField(max_length=140)
-    price_per_night = models.PositiveIntegerField()
+    price_per_night = models.PositiveIntegerField(verbose_name="Price", help_text="Price per night in AUD")
     description = models.TextField()
     address = models.CharField(max_length=255)
-    pets_allowed = models.BooleanField(default=True)
+    pets_allowed = models.BooleanField(verbose_name="Pets Allowed?",default=True, help_text="Is pets allowed?")
     bedrooms = models.PositiveIntegerField()
     bathrooms = models.PositiveIntegerField()
 
