@@ -37,11 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # Custom Apps
     'houses.apps.HousesConfig',
     'users.apps.UsersConfig',
     'rooms.apps.RoomsConfig',
     'common.apps.CommonConfig',
     'experiences.apps.ExperiencesConfig',
+    'categories.apps.CategoriesConfig',
 ]
 
 MIDDLEWARE = [

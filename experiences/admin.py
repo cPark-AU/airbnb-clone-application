@@ -11,6 +11,10 @@ class ExperienceAdmin(admin.ModelAdmin):
         "created_at",
     )
 
+    list_filter = (
+        "category",
+    )
+
 @admin.register(Services)
 class ServicesAdmin(admin.ModelAdmin):
     list_display = (
@@ -18,3 +22,5 @@ class ServicesAdmin(admin.ModelAdmin):
         "details",
         "description",
     )
+
+    
