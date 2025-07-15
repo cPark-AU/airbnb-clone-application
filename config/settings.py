@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'common.apps.CommonConfig',
     'experiences.apps.ExperiencesConfig',
     'categories.apps.CategoriesConfig',
+    'reviews.apps.ReviewsConfig',
 ]
 
 MIDDLEWARE = [
