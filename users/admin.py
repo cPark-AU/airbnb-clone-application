@@ -6,7 +6,7 @@ from .models import User
 class CustomUserAdmin(UserAdmin):
     fieldsets = (
         ("Profile", {
-            "fields": ("username", "password", "email", "name", "is_host"),
+            "fields": ("profile_photo","username", "password", "email", "name", "is_host", "gender", "language", "currency"),
             "classes": ("wide",),
         }),
         ("Permissions", {
