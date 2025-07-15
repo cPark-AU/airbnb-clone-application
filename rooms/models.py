@@ -1,6 +1,7 @@
 from django.db import models
+from common.models import CommonModel
 
-class Room(models.Model):
+class Room(CommonModel):
     
     """Room Model Defintion"""
 
@@ -9,6 +10,7 @@ class Room(models.Model):
         PRIVATE_ROOM = ("private_room", "Private Room")
         SHARED_ROOM = ("shared_room", "Shared Room")
 
+    name = models.CharField(max_length=180, default="")
     country = models.CharField(max_length=50, default="Australia")
     city = models.CharField(max_length=80, default="Melbourne")
     price = models.PositiveIntegerField()
@@ -22,12 +24,18 @@ class Room(models.Model):
     owner = models.ForeignKey("users.User", on_delete=models.CASCADE)
     amenities = models.ManyToManyField("rooms.Amenity")
 
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    def __str__(self) -> str:
+        return self.name
 
-class Amenity(models.Model):
+class Amenity(CommonModel):
 
     """Amenity Model Definition"""
 
     name = models.CharField()
     description = models.CharField(max_length=150, null=True)
+
+    def __str__(self) -> str:
+        return self.name
+    
+    class Meta:
+        verbose_name_plural = "Amenities"
